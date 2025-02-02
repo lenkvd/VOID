@@ -8,16 +8,26 @@ sudo xbps-install -Syu
 
 ## Part 2:
 echo "Installing The Necessary Stuff"
-sudo xbps-install -S --yes base-devel xorg libXft-devel libX11-devel libXinerama-devel chromium nodejs htop mpv feh terminus-font nerd-fonts-ttf lsd neofetch
+sudo xbps-install -S --yes base-devel xorg libXft-devel libX11-devel libXinerama-devel firefox nodejs htop mpv feh terminus-font nerd-fonts-ttf neofetch kitty neovim
 
 ## Part 3:
 echo "Setup A Window Manager (DWM)"
-mkdir suckless
-cd suckless
-git clone https://git.suckless.org/dwm
+mkdir tools
+cd tools
+git clone https://github.com/lenkvd/catppuccin-dots/tree/main/.local/src/dwm
+https://github.com/lenkvd/catppuccin-dots/tree/main/.local/src/dwmblocks
+https://github.com/lenkvd/catppuccin-dots/tree/main/.local/src/slock
 git clone https://git.suckless.org/st
 git clone https://git.suckless.org/dmenu
 cd dwm
+make
+sudo make clean install
+cd ..
+cd dwmblocks
+make
+sudo make clean install
+cd ..
+cd slock
 make
 sudo make clean install
 cd ..
