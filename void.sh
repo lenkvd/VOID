@@ -14,20 +14,10 @@ sudo xbps-install -S --yes base-devel xorg libXft-devel libX11-devel libXinerama
 echo "Setup A Window Manager (DWM)"
 mkdir tools
 cd tools
-git clone https://github.com/lenkvd/catppuccin-dots/tree/main/.local/src/dwm
-https://github.com/lenkvd/catppuccin-dots/tree/main/.local/src/dwmblocks
-https://github.com/lenkvd/catppuccin-dots/tree/main/.local/src/slock
+git clone https://git.suckless.org/dwm
 git clone https://git.suckless.org/st
 git clone https://git.suckless.org/dmenu
 cd dwm
-make
-sudo make clean install
-cd ..
-cd dwmblocks
-make
-sudo make clean install
-cd ..
-cd slock
 make
 sudo make clean install
 cd ..
